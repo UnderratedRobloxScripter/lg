@@ -1037,7 +1037,7 @@ function aboutSheet() {
 function inputSheet() {
   const keys = ['1','2','3','4','5','6','7','8','9','–','0','*'];
   const nm = { '–': 'DASH', '*': 'ASTERISK' };
-  sheet('<div class="seg"><button class="on" data-seg="num">Numbers</button><button data-seg="txt">Keyboard</button></div>' +s
+  sheet('<div class="seg"><button class="on" data-seg="num">Numbers</button><button data-seg="txt">Keyboard</button></div>' +
     '<div id="segNum"><div class="keys">' + keys.map(k => '<button class="' + (nm[k] ? 'mut' : '') + '" data-btn="' + (nm[k] || k) + '">' + k + '</button>').join('') +
     '</div><button class="btn sec" data-btn="ENTER">Enter</button></div>' +
     '<div id="segTxt" hidden><label class="lab" for="kbIn">Send text to the TV</label><div class="fld"><input id="kbIn" placeholder="192.168.101.72" autocomplete="off"><button class="btn sm" id="kbSend">Send</button></div>' +

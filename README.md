@@ -50,3 +50,13 @@ certificate on `wss://:3001`. Neither can be changed from HTML/JS, so this is a 
 ## Command line instead (needs JDK 17 + Android command-line tools)
     sdkmanager "platforms;android-34" "build-tools;34.0.0"
     gradle assembleDebug        # Gradle 8.7 installed
+
+## Wi-Fi discovery, Wi-Fi pinning and real app icons
+- **Discovery:** "Scan network" now also runs SSDP (UDP multicast, the method LG's own apps use), so TVs are
+  found on any subnet with their real names. The old IP sweep still runs alongside it.
+- **Wi-Fi pinning:** the app asks Android for the Wi-Fi network and binds to it, so traffic to the TV is not
+  sent over mobile data when the Wi-Fi has no internet. Errors say so when the phone is not on Wi-Fi.
+  (Google Fonts need internet; with a no-internet Wi-Fi the page falls back to system fonts.)
+- **Icons:** icons are the ones the TV reports for each app. They are loaded natively (works with the TV's
+  http and self-signed https, private LAN addresses only). If an icon is missing or fails, the original
+  drawn art / letter tile is shown.
